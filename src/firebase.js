@@ -10,13 +10,8 @@ const app = firebase.initializeApp({
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  // apiKey: 'AIzaSyA_hr9iKvGf7wtIlCPbGs-FoWgYvTT38nc',
-  // authDomain: 'my--drive-24733.firebaseapp.com',
-  // projectId: 'my--drive-24733',
-  // storageBucket: 'my--drive-24733.appspot.com',
-  // messagingSenderId: '955794835090',
-  // appId: '1:955794835090:web:c28b6c701fa6720f0e884b',
 });
+
 console.log(process.env.REACT_APP_FIREBASE_API_KEY);
 
 export const auth = app.auth();
