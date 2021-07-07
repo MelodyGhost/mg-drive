@@ -1,13 +1,16 @@
-import { Container } from 'react-bootstrap'
-import React from 'react'
-
+import { Center, VStack } from '@chakra-ui/react';
+import React from 'react';
+import Navbar from '../Navbar';
 
 const CenteredContainer = ({ children }) => {
   return (
-    <Container className='d-flex flex-column justify-content-center align-items-center vh-100'>
-      { children }
-    </Container>
-  )
-}
+    <>
+      <Navbar />
+      <Center height={'80vh'}>
+        <VStack>{children}</VStack>
+      </Center>
+    </>
+  );
+};
 
-export default CenteredContainer
+export default CenteredContainer;
