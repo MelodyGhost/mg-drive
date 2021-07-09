@@ -7,11 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 html {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 code {

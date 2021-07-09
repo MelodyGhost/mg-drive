@@ -8,11 +8,12 @@ import Reset from './authentication/Reset';
 import UpdateProfile from './authentication/UpdateProfile';
 import Dashboard from './Dashboard';
 import { Box } from '@chakra-ui/react';
+import { Demo } from './drag-n-drop/file-drop';
 
 function App() {
   return (
     <AuthProvider>
-      <Box maxW="container.xl" mx="auto">
+      <Box>
         <Router>
           <Switch>
             {/* User Auth */}
@@ -41,6 +42,7 @@ function App() {
           </Switch>
         </Router>
       </Box>
+      {/* <Demo /> */}
     </AuthProvider>
   );
 }

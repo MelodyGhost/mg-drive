@@ -5,15 +5,16 @@ import { useAuth } from '../../context/AuthContext';
 import { storage, files, currentDate } from '../../firebase';
 import { useState } from 'react';
 import { Toast, ProgressBar } from 'react-bootstrap';
-import { Tooltip } from '@chakra-ui/react';
+import { Tooltip, Text, HStack, Box } from '@chakra-ui/react';
 import { v4 as uuid4 } from 'uuid';
+import { DropFile } from '../drag-n-drop/file-drop';
 
 export default function AddFileBtn({ currentFolder }) {
   const [uploadingFile, setUploadingFile] = useState([]);
   const { currentUser } = useAuth();
 
-  function handleUpload(e) {
-    const file = e.target.files[0];
+  function handleUpload(f) {
+    const file = f[0];
     if (currentFolder === null || !file) return;
 
     const id = uuid4();
@@ -94,25 +95,32 @@ export default function AddFileBtn({ currentFolder }) {
   return (
     <>
       <Tooltip label="Upload Files">
-        <label className="btn btn-outline-success m-3">
-          <FontAwesomeIcon icon={faFileUpload} />
-          <input
-            type="file"
-            onChange={handleUpload}
-            style={{
-              visibility: 'hidden',
-              position: 'absolute',
-              top: '-9999px',
-            }}
-          />
-        </label>
+        <Box boxShadow="lg" m="4">
+          <label className="btn btn-outline-success m-0">
+            <HStack>
+              <FontAwesomeIcon size="1x" icon={faFileUpload} />
+              <Text>Upload</Text>
+            </HStack>
+            <input
+              type="file"
+              onChange={(e) => handleUpload(e.target.files)}
+              style={{
+                visibility: 'hidden',
+                position: 'absolute',
+                top: '-9999px',
+              }}
+            />
+          </label>
+        </Box>
       </Tooltip>
+      <DropFile handleUpload={handleUpload} />
       {uploadingFile.length > 0 &&
         ReactDOM.createPortal(
           <div
             style={{
               position: 'absolute',
-              right: '1rem',
+              left: '50%',
+              transform: 'translateX(-50%)',
               bottom: '1rem',
               width: '250px',
             }}

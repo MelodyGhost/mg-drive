@@ -4,7 +4,7 @@ import { faFolderPlus } from '@fortawesome/free-solid-svg-icons';
 import { useState, useRef } from 'react';
 import { folders, currentDate } from '../../firebase';
 import { useAuth } from '../../context/AuthContext';
-import { Tooltip } from '@chakra-ui/react';
+import { Tooltip, Box, HStack, Text } from '@chakra-ui/react';
 
 const AddFolderBtn = ({ currentFolder }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -41,9 +41,14 @@ const AddFolderBtn = ({ currentFolder }) => {
   return (
     <div>
       <Tooltip label="Create a folder">
-        <Button onClick={() => setOpenModal(true)} variant="outline-success">
-          <FontAwesomeIcon icon={faFolderPlus} />
-        </Button>
+        <Box boxShadow="lg" m="4">
+          <Button onClick={() => setOpenModal(true)} variant="success">
+            <HStack>
+              <FontAwesomeIcon icon={faFolderPlus} />
+              <Text>Folder</Text>
+            </HStack>
+          </Button>
+        </Box>
       </Tooltip>
       <Modal
         show={openModal}
