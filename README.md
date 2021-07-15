@@ -10,14 +10,10 @@
 
 ### ✨ [Demo](mgdrive.netlify.app)
 
-<br>
-
 <h2>Video Demo</h2>
 
-<video src="./Demo(mgdrive)/Demo(mgdrive).mp4" width='100%' controls>
-</video>
+https://user-images.githubusercontent.com/24309812/125851808-27edd2ee-78ab-440b-9f70-67c96e912aae.mp4
 
-<br>
 <br>
 
 ## Features
