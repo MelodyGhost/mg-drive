@@ -8,29 +8,12 @@ import {
   Avatar,
   HStack,
   Tooltip,
-  Container,
 } from '@chakra-ui/react';
 import { useAuth } from '../context/AuthContext';
 
-// import { Container, Navbar, Nav } from 'react-bootstrap';
-
-// const NavbarDrive = () => {
-//   return (
-//     <>
-//       <Navbar bg="dark" variant='dark' expand="sm">
-//         <Navbar.Brand>My Google Drive</Navbar.Brand>
-//         <Nav className='ml-auto'>
-//           <Nav.Link as={Link} to='/profile' >
-//             Profile
-//           </Nav.Link>
-//         </Nav>
-//       </Navbar>
-//     </>
-//   )
-// }
-
 const NavbarDrive = () => {
   const { currentUser } = useAuth();
+  console.log(currentUser);
   return (
     <>
       <Box bg="blackAlpha.800" p="4">
