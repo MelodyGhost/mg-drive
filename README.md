@@ -12,7 +12,10 @@
 
 <br>
 
-<img src="https://media.giphy.com/media/TFDXLBK314m5dYoIqh/giphy.gif" alt="Demo Gif">
+<h2>Video Demo</h2>
+
+<video src="./Demo(mgdrive)/Demo(mgdrive).mp4" width='100%' controls>
+</video>
 
 <br>
 <br>
